@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>반복자 연습</title>
+<script>
+	var skill = {"programminglanguage":"Java","database":"MySQL","ide":"eclipce"}
+	var study = ["기본문법", "객체지향개념","예외처리","java.lang","java.util","thread","io","network","db"];
+	
+	//객체 순회
+	for(attr in skill){
+//		document.write(attr + "<br/>")
+		document.write(attr + ":" + skill[attr] + "<br/>")
+	}
+	
+	//배열 순회
+	for(sdf in study){
+//		document.write(sdf + "<br/>")
+		document.write(sdf + study[sdf] + "<br/>")
+	}
+	
+	var num = 20
+	//2진수로 출력 
+	//00000000 00000000 000000000 00010100
+	var bin = ""
+	var mok = 0
+	var nmg = 0
+	
+	do{
+		//js는 정수실수 나누지 않으므로 정수면 parseInt로 묶어줘야 함
+		mok = parseInt(num / 2) //몫 구하기
+		nmg = num - (mok *2)
+		//나머지를 bin에 추가
+		bin = nmg + bin
+		num = mok;
+
+	}while(mok != 0)
+	//bin 개수가 32가 안되면 앞에 부족한 개수만큼 0을 채우기	
+		var size = 32-bin.length
+		for(var i=0; i<size; i=i+1){
+			bin = "0" + bin
+		}
+		document.write(bin + "<br/>")
+</script>
+</head>
+<body>
+
+</body>
+</html>

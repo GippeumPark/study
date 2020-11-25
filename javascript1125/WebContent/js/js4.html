@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제어문 연습</title>
+<script>
+var year = 2020
+//year 가 윤년인지 판별해서 윤년이면 console에 윤년이라고 출력하고 그렇지 않으면 윤년이 아니라고 출력
+//윤년의 조건
+//4의 배수이고 100의 배수는 아닌 경우
+//400의 배수인 경우
+
+if(year % 4 == 0 && year % 100 != 0 ||year % 400 == 0) {
+	console.log("윤년")
+}else{
+	console.log("윤년이 아님")
+}
+
+//var op = ?
+var op = "*"
+var d1 = 20
+var d2 = 30
+switch(op){
+case "+":
+	console.log("d1 + d2")
+	break;
+case "-":
+	console.log("d1 - d2")
+	break;
+case "*":
+	console.log("d1 * d2")
+	break;
+case "/":
+	console.log("d1 / d2")
+	break;
+default :
+	console.log("잘못된 연산자")
+	break;
+}
+//op의 값이 + 면 더하기, - 면 빼기, *이면 곱하기 /이면 나누기를 해서 결과를  console에 출력하기
+
+//image1.png 부터 image9.png까지를 출력
+var a = 1
+while(a<=9){
+	var msg = "<img src='../imagebts/image" + a + ".png' width='256' height='256'/>"
+	document.write(msg)
+	a=a+1
+	//console.log("image" + a + ".png" )	
+}
+
+
+/*for(var a=1; a<=9; a=a+1){
+	var msg = "<img src='../imagebts/image" + a + ".png' width='256' height='256'/>"
+	document.write("msg")
+
+} */
+</script>
+</head>
+<body>
+
+</body>
+</html>

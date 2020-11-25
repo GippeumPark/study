@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Function(함수)</title>
+<script>
+	//fun1 이라는 함수를 선언
+	var fun1=function(){
+		alert("함수")
+	}
+	//함수 호출
+	//fun1();
+	
+	var fun2 = function(msg){
+		alert(msg)
+	}
+	
+	//함수 호출
+//	fun2("데이터1");
+//	fun2("데이터2");
+
+var ar=["이름","성별","나이","주소","생년월일","전화번호"]
+//함수 호출 전에 ar[3]를 출력
+//alert(ar[3]);
+
+//xr 에 ar이 참조하고 있는 참조값이 복사됨
+var fun3=function(xr){
+	//xr을 이용해서 4번째 데이터를 수정하면 원본 데이터가 수정됨
+	//call by reference라고 함
+	//xr[3]="개인정보"
+}
+fun3(ar)
+//함수 호출 후에 ar[3]을 출력
+//alert(ar[3])
+
+//자바스크립트 함수를 호출할 때는 매개변수의 데이터를 대입하지 않으면 기본값도 설정해서 사용함
+var fun4 = function(a, b){
+	//alert(a)
+	//alert(arguments[0]) //저장하고 있는 지역변수 arguments이용 (값 대입 대신 arguments[0] 입력해도 됨)
+	//alert(b)
+}
+//a와 b에 10과 20을 대입
+//fun4(10, 20)
+//a에 10을 대입하고 b는 undefined
+//fun4(10)
+//a, b 모두 undefined
+//fun4()
+
+//함수에 return이 있으면 그 리턴 값을 가지고 다른 함수를 연달아서 호출할 수 있음
+//이러한 방식을 파이프라인이라고 보냄
+//문자열 처리에서 많이 사용하고 안드로이드에서 대화상자 만들 때 많이 활용
+var fun5 = function(msg){
+	return msg + msg
+}
+alert(fun5("메시지").length)
+</script>
+</head>
+<body>
+
+</body>
+</html>

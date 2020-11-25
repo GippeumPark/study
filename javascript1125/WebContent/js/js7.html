@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type = "button" value="버튼"
+	id="btn"/>
+</body>
+<script>
+//버튼을 누르면 호출되는 함수를 등록 - 콜백 함수를 등록
+	document.getElementById("btn").onclick=function(e){
+		alert("버튼을 누름")
+	}
+	
+	var outer = function(){
+		var i = 10
+		//함수가 함수를 리턴하는 구조를 closure
+		return function(){
+			i = i + 1
+			alert(i)
+		}
+		
+	}
+	//outer를 호출해서 함수를 리턴받음
+	var inner = outer()
+	//리턴받은 함수를 호출하면 outer 내부의 데이터가 변경됨
+	//이러한 동작을 closure라고 함
+	inner()
+	inner()
+	
+	//outer()
+	//outer 내부의 데이터를 외부에서 변경
+	//outer 내부에 i를 호출할 수 없기 때문에 i라는 새로운 변수를 생성
+//	i = 20		
+	
+//	outer()
+</script>
+</html>
