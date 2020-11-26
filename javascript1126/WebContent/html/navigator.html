@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Navigator</title>
+<script>
+//스마트폰 운영체제 배열 생성
+var smartphone = ["android","iphon","ipad"]
+//접속한 클라이언트 운영체제 문자열 안에 smartphone 배열의 글자가 있는지 확인
+var flag = false;
+//접속한 브라우저 정보를 소문자로 변경해서 저장
+var useragent = navigator.userAgent.toLowerCase();
+for(idx in smartphone){
+	if(useragent.indexOf(
+			smartphone[idx])>=0){
+		flag = true;
+		break;
+	}
+}
+
+if(flag==true){
+	location.href = "https://www.apple.com";
+}else{
+	location.href = "https://www.google.com";	
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

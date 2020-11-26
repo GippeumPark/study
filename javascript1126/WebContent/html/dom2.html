@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 처리</title>
+</head>
+<body>
+	<input type = "button" value="버튼1"
+	id="btn1" onclick="alert('버튼1클릭')"/>	
+	<input type = "button" value="버튼2"
+	id="btn2"/>
+	<input type = "button" value="버튼3"
+	id="btn3"/>
+	<input type = "button" value="버튼4"
+	id="btn4"/>
+	
+</body>
+<script>
+	document.getElementById("btn4").addEventListener("click",function(e){
+	//이벤트 정보를 가진 객체를 가져오기
+	//IE 떄문에 이렇게
+	var event = e || window.event
+	//이벤트가 발생한 좌표 출력
+	alert(event.x + ":" + event.y)
+		
+	//this는 이벤트가 발생한 객체 , btn4를 방탄소년단으로 바꿔달라는 이벤트 처리
+	this.value="방탄소년단"
+	})
+	//고전적 이벤트 처리 모델
+	document.getElementById("bt2").onclick=function(e){
+		alert("버튼2클릭")
+	}
+	document.getElementById("btn3")
+		.addEventListener("click",function(e){
+			alert("버튼3클릭")
+		})
+	</script>
+</html>

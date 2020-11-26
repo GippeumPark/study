@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>생성자</title>
+<script>
+//생성자 함수
+//함수 내에서 this를 사용했기 때문에 객체를 생성하는 함수가 됨
+var Person = function(num, name){
+	this.num=num
+	this.name=name
+	this.toString = function(){
+		return num + ":" + name
+	}
+}
+var person1 = new Person(1, "쁨")
+var person2 = new Person(2, "꼬미")
+
+alert(person1)
+</script>
+</head>
+<body>
+
+</body>
+</html>

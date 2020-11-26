@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSON 파싱</title>
+<script>
+//자바스크립트 객체
+var obj = {mobile:['Android', 'iOS']}
+
+//json 문자열로 변환
+var data = JSON.stringify(obj)
+
+//필요하면 data를 전송
+//alert(data)
+
+//JSON 파싱
+//json으로 변경하는건 쉽지만 파싱하는 건 사용자가 해야하기 때문에 잘 알아야 함
+var x = JSON.parse(data)
+//mobile 키에 대입된 데이터를 가져옴
+var mobile = x.mobile
+
+//배열의 데이터 접근
+for(idx in mobile){
+	alert(mobile[idx])
+}
+
+window.open('https://www.google.com', '구글', 'width=600, heigh=300')
+
+//1분 마다 동작하는 타이머 생성
+var timer = setInterval(function(){
+	window.open('https://www.google.com', '구글', 'width=600, heigh=300')
+},60000)
+
+//10분 후에 타이머 중지
+setTimeout(function(){
+	clearInterval(timer)
+},600000)
+</script>
+</head>
+<body>
+
+</body>
+</html>

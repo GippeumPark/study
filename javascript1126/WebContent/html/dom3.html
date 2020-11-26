@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="search.jsp" id="fform">
+		검색어:<input type = "text"
+		name="query" id="query" /><br/>
+		<input type="submit" value="전송"/>
+		<input type="button" value="버튼" id="btn"/>
+		
+		</form>
+</body>
+<script>
+document.getElementById("btn").addEventListener("click",function(e){
+	document.getElementById("fform").submit()
+//fform의 submit 이벤트 강제 발생
+})
+document.getElementById("fform").addEventListener("submit",function(e){
+	//기본 이벤트 제거
+	alert("넘어가지 않도록 하기")
+	e.preventDefault()
+	
+})
+
+
+</script>
+</html>

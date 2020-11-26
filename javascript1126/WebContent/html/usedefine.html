@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체 생성과 사용</title>
+<script>
+var sdf = {
+		name:"ppeum",
+		phone:"010-8857-1916",
+		disp:function(){
+			document.write(
+					this.name + this.phone + "<br />")
+		}
+}
+sdf.name = "쁨"
+sdf.disp()
+
+sdf.name = "ppeum" //존재하는 속성이므로 수정
+sdf.age = 0613 //존재하지 않는 속성이므로 추가
+//모든 속성 확인
+for(attr in sdf){
+	document.write(attr + "<br />")
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>인코딩 관련 함수</title>
+<script>
+var url = "http://www.kakao.com/query=한글"
+//인코딩은 파라미터만 해야 함
+//여기서는 encodeURI를 사용하는 것이 좋음
+document.write(escape(url) + "<br/>")
+document.write(encodeURI(url) + "<br/>")
+document.write(encodeURIComponent(url) + "<br/>")
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
