@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>XML 파싱</title>
+<script>
+	//제일 먼저  1.ajax 객체 생성
+	var request = new XMLHttpRequest()
+	//2.전송할 데이터 생성 (없어서 패스)
+	
+	//3.요청 생성
+	request.open('GET', 'data/tel.xml')
+	
+	//4.요청 전송
+	request.send('')
+	
+	//5.응답이 오면 호출될 콜백 함수 등록
+	request.onreadystatechange = function(){
+		//XML은 한 줄이 더 들어감
+		//응답이 정상적으로 온 경우
+		if(request.readyState == 4){
+			if(request.status >=200 && request.status < 300)
+				//XML 데이터 가져오기
+				//이미 파싱 된 상태라서 필요한 데이터만 뽑으면 됨
+				var xml = request.responseXML
+				//필요한 태그 가져오기
+				var names = xml.getElementsByTagName("name")
+				//배열 순회
+				for(var i=0; i<names.length; i=i+1){
+					var name = names[i].childNodes[0].nodeValue
+					alert(name)
+				}
+				
+		}
+	}
+	
+	</script>
+</head>
+<body>
+
+</body>
+</html>

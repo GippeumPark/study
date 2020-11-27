@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>스크롤을 이용한 데이터 업데이트</title>
+<script> //위에다 스크립트 작성시
+window.addEventListener("load",function(e){
+	for(var i=0; i<20; i=i+1){
+	document.getElementById("body")
+	.innerHTML += "<h1>무한 스크롤</h1>"
+	}
+	
+	window.addEventListener("scroll",function(e){
+		//페이지의 크기 찾기
+		var supportPageOffset = window.pageXOffset !== undefined
+		//표준 부합모드 여부 확인
+		var isCSS1Compt = ((document.compatMode || "")
+		=== "CSS1Compat")
+		//스크롤의 최 상단 구하기
+		var scrollTop = supportPageOffset ? window.pageYOffset : isCSS1Compt ? document.documentElement.scrollTop : document.body.scrollTop
+		//스크롤의 높이 구하기
+		var scrollHeight = scrollTop + window.innerHeight
+		//문서의 높이 구하기
+		var documentHeight = document.body.clientHeight
+		//스크롤의 높이가 더 크면 업데이트
+		if(scrollHeight >= documentHeight){
+			for(var i=0; i<10; i=i+1){
+				//이벤트 발생시 추가할 데이터는 여기다가 입력해야 함
+				document.getElementById("body").innerHTML += "<h1>추가된 데이터</h1>"
+			}
+		}
+	})
+});
+</script>
+</head>
+<body id="body">
+
+</body>
+</html>

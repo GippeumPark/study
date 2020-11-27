@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지 미리보기</title>
+<script>
+	window.addEventListener("load", function(e){
+		document.getElementById("imgiup").addEventListener("change", function(e){
+			//선택한 파일이 있으면
+			if(this.files && this.files[0].name){
+				//파일을 읽어주는 객체
+				var reader = new FileReader()
+				//file 객체의 load 이벤트 처리
+				reader.addEventListener("load",function(e){
+					document.getElementById("img").src=e.target.result
+				})
+				//파일 읽기 명령 실행
+				reader.readAsDataURL(this.files[0])
+			}
+		})
+	})
+</script>
+</head>
+<body>
+	<input type="file" id="imgiup"
+	accept="image/*"/>
+	<img id="img" height="500" width="300" border="1" />
+	
+</body>
+</html>

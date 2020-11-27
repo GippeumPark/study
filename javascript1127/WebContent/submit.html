@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>submit</title>
+</head>
+<body>
+	<form action="server.jsp"
+	id="myform">
+	<input type="text" id="name" name="name"/>
+	<input type="submit"value="검색"/>
+	</form>
+</body>
+<script>
+var myform = document.getElementById("myform")
+var fname = document.getElementById("name")
+
+//form의 데이터를 전송하려고 할 때
+myform.addEventListener("submit", function(e){
+	//fname에 값이 1보다 작을 때
+	if(fname.value.trim().length < 1){
+		alert("name은 필수입니다.") //그냥 alert하면 대화상자는 열리는데 그리고 넘어가버림
+		e.preventDefault() //form의 데이터를 전송하지 않게 해주는 것
+	}
+})
+</script>
+</html>

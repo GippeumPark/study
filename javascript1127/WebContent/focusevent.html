@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>포커스 이벤트</title>
+ <style>
+ 	#msg{
+ 		color=red;
+ 	}
+ </style>
+</head>	
+<body>
+	<input type="text" id="num1" />
+	<span id="msg"></span> <br />
+	<input type="text" id="num2" />
+</body>
+	<script>
+	var num1 = document.getElementById("num1")
+	var num2 = document.getElementById("num2")
+	var msg = document.getElementById("msg")
+	num1.addEventListener("focusout", function(e){
+		if(num1.value.trim().length < 1){
+
+			msg.innerHTML = "필수 입력입니다."
+			msg.style.color="red"
+		}else{
+			msg.innerHTML = "사용 가능합니다."
+			msg.style.color="green"
+			}
+
+	})
+	num.addEventListener("focusin", function(e){
+		num.style.border = "20px solid red"
+	})
+	
+	</script>
+</html>

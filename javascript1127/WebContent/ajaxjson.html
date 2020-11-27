@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ajax 텍스트</title>
+</head>
+<body>
+	<div id="disp"></div>
+</body>
+<script>
+	//1.ajax 객체 생성
+	var request = new XMLHttpRequest();
+	
+	//2.요쳥할 때 같이 보낼 데이터 생성 (지금은 요청할 데이터 없어 패스)
+	
+	//3.요청 생성 /data/data.txt를 읽기
+	//request.open('GET', 'data/data.txt')
+	request.open('GET', 'data/data.json')
+	
+	//4.요청 전송
+	request.send('')
+	
+	//5.응답 받았을 때 수행할 콜백 메소드 등록
+	request.onreadystatechange = function(){
+		if(request.status >= 200 && request.status < 300){
+			//텍스트 내용 읽기
+			//alert(request.responseText)
+			
+			//json 인 경우는 파싱
+			//[ ]로 시작했으니 배열
+			var ar = JSON.parse(
+					request.responseText)
+			//배열은 순회 작업을 해야함
+			for(var idx in ar){
+				var msg =
+				ar[idx].code + ":" +
+				ar[idx].value
+				alert(msg)
+			}
+		}else{
+			alert("가져오기 실패")
+		}
+	}
+</script>
+</html>

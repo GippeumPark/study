@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>키보드 이벤트</title>
+</head>
+<body>
+
+<!-- 입력 받는 이벤트 -->
+<!--span은 블럭처리 하지 않음 id를 출력하기 위해 span을 사용 -->
+<span id="number1msg"></span>
+<input type = "text" id = "number1"/>
+
+<span id="disp"></span>
+<input type = "text" id="keyinput"/>
+
+	
+</body>
+<script>
+	var number1msg = document.getElementById("number1msg")
+	var number1 = document.getElementById("number1")
+	number1.addEventListener("input",function(e){
+		//백스페이스와 좌우 화살표는 허용
+		if(e.keyCode==8 || e.keyCode == 46
+			||e.keyCode==37 || e.keyCode==39){
+		number1msg.innerHTML = "";
+		return
+	}else{
+		number1msg.innerHTML = "숫자만 입력"
+		//숫자가 아닌 데이터는 삭제
+		//정규식을 이용해서 숫자가 아닌 데이터는 ''로 치환
+		e.target.value = e.target.value.replace(/[^0-9]/g, '')
+	}
+	})
+
+	var disp = document.getElementById("disp")
+	var keyinput = document.getElementById("keyinput")
+	keyinput.addEventListener("keydown", function(e){
+		disp.innerHTML = e.keyCode //대소문자 구분 못함
+		disp.innerHTML += e.code //대소문자 구분함
+		disp.innerHTML += e.key
+	})
+</script>
+</html>
